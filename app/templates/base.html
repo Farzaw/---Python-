@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Malware Analysis DB{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-900 text-zinc-100 min-h-screen">
+    <header class="border-b border-zinc-800">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div>
+                <a href="/" class="text-sm font-medium tracking-wide text-zinc-100 hover:text-zinc-300">
+                    Malware Analysis DB
+                </a>
+                <p class="text-xs text-zinc-500 mt-0.5">Internal Threat Intelligence Panel</p>
+            </div>
+            <nav class="text-xs text-zinc-500">
+                <span>{{ samples_count | default(5) }} samples indexed</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="border-t border-zinc-800 mt-12">
+        <div class="max-w-6xl mx-auto px-4 py-4 text-xs text-zinc-600">
+            AV Lab Internal Use Only — Research Dataset v1.0
+        </div>
+    </footer>
+</body>
+</html>
